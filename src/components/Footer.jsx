@@ -1,36 +1,24 @@
 import React from 'react';
-import { Instagram, Twitter, Linkedin, Facebook } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="border-t border-white/10 pt-20 pb-10 bg-black">
+        <footer className="py-20 bg-gray-50 border-t border-gray-100">
             <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-                    <div className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-6 md:mb-0">
+                <div className="flex flex-col md:flex-row justify-between items-center mb-12 space-y-8 md:space-y-0 text-center md:text-left">
+                    <div className="text-3xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent tracking-tighter">
                         Studio Six
                     </div>
 
-                    <div className="flex space-x-6">
-                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-gray-400 hover:text-white">
-                            <Instagram className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-gray-400 hover:text-white">
-                            <Linkedin className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-gray-400 hover:text-white">
-                            <Twitter className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors text-gray-400 hover:text-white">
-                            <Facebook className="w-5 h-5" />
-                        </a>
+                    <div className="text-gray-500 font-medium">
+                        Crafting digital legacies through bold design.
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                    <p>© {new Date().getFullYear()} Studio Six. All rights reserved.</p>
-                    <div className="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 font-bold uppercase tracking-widest">
+                    <p>© 2026 Studio Six Agency. All rights reserved.</p>
+                    <div className="flex space-x-10 mt-4 md:mt-0">
+                        <a href="#" className="hover:text-indigo-600 transition-colors">Privacy Policy</a>
+                        <a href="#" className="hover:text-indigo-600 transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>

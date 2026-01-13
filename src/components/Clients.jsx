@@ -18,50 +18,53 @@ const clientTypes = [
 
 const Clients = () => {
     return (
-        <section id="clients" className="py-20 relative overflow-hidden">
+        <section id="clients" className="py-32 relative overflow-hidden bg-white">
             {/* Background decoration */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/10 rounded-full blur-[100px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] bg-blue-50/50 rounded-full blur-[120px]" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-24"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6">Trusted by 50+ Clients</h2>
-                    <p className="text-gray-400 text-lg">From local businesses to global brands</p>
+                    <h2 className="text-6xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
+                        Trusted by <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Global Brands</span>
+                    </h2>
+                    <p className="text-gray-500 text-xl font-medium max-w-2xl mx-auto">From local startups to industry leaders, we're proud partners in growth.</p>
                 </motion.div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
                     {clientCategories.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ scale: 0.9, opacity: 0 }}
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="text-center p-8 bg-gradient-to-br from-white/5 to-transparent rounded-2xl border border-white/10"
+                            transition={{ delay: index * 0.05, duration: 0.5, type: 'spring', stiffness: 150 }}
+                            className="text-center p-12 bg-gray-50/50 rounded-[40px] border border-gray-100 shadow-xl shadow-gray-100/50"
                         >
-                            <div className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                            <div className="text-7xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tighter">
                                 {item.count}
                             </div>
-                            <div className="text-gray-400">{item.label}</div>
+                            <div className="text-gray-500 font-bold text-lg uppercase tracking-widest">{item.label}</div>
                         </motion.div>
                     ))}
                 </div>
 
                 {/* Categories Pills */}
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
                     {clientTypes.map((type, index) => (
                         <motion.span
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.2 + (index * 0.05) }}
-                            className="px-6 py-3 bg-white/5 rounded-full border border-white/10 text-gray-300 hover:bg-white/10 hover:border-purple-500/50 transition-all cursor-default"
+                            transition={{ delay: 0.1 + (index * 0.05), duration: 0.4 }}
+                            className="px-8 py-4 bg-white rounded-2xl border border-gray-100 text-gray-600 font-bold hover:shadow-lg hover:border-indigo-200 hover:-translate-y-1 transition-all cursor-default shadow-sm"
                         >
                             {type}
                         </motion.span>

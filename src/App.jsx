@@ -35,7 +35,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0f0f11] text-white selection:bg-purple-500 selection:text-white cursor-none">
+    <div className="min-h-screen bg-[#fcfcfd] text-[#0f172a] selection:bg-indigo-600 selection:text-white cursor-none">
       <CustomCursor />
       <Navbar />
       <Hero />
