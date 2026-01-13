@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, Smartphone, Video, Megaphone, ArrowRight } from 'lucide-react';
+import { Monitor, Smartphone, Video, Megaphone, ArrowRight, Sparkles } from 'lucide-react';
 
 const services = [
     {
@@ -42,74 +42,122 @@ const services = [
 
 const Services = () => {
     return (
-        <section id="services" className="py-20 relative bg-black">
-            {/* Background Glow */}
-            <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-[128px]" />
-            <div className="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[128px]" />
+        <section id="services" className="py-32 relative bg-black overflow-hidden">
+            {/* Background Glows */}
+            <div className="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[128px]" />
+            <div className="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[128px]" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/[0.03] rounded-full blur-[140px]" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-24"
+                    className="text-center mb-32"
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-6">Our <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Services</span></h2>
-                    <p className="text-gray-400 text-xl max-w-2xl mx-auto">
-                        Comprehensive digital solutions tailored to scale your brand.
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6 text-purple-400 text-sm font-medium">
+                        <Sparkles className="w-4 h-4" />
+                        <span>Our Expertise</span>
+                    </div>
+                    <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter text-white">
+                        Premium <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">Digital Solutions</span>
+                    </h2>
+                    <p className="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">
+                        We don't just provide services; we build <span className="text-white">digital legacies</span> that help brands dominate their industry.
                     </p>
                 </motion.div>
 
-                <div className="space-y-24">
+                <div className="space-y-40">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.6 }}
-                            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-20 items-center`}
                         >
-                            {/* Graphic Side */}
-                            <div className="w-full lg:w-1/2">
-                                <div className={`relative aspect-[4/3] rounded-3xl overflow-hidden group`}>
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
+                            {/* High-Impact Visual */}
+                            <div className="w-full lg:w-1/2 group">
+                                <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden">
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-5 group-hover:opacity-20 transition-all duration-700 scale-110 group-hover:scale-100`} />
                                     <div className="absolute inset-0 backdrop-blur-3xl" />
 
-                                    {/* Glass Card in Center */}
+                                    {/* Central Animated Icon Card */}
                                     <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="w-48 h-48 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center text-white shadow-2xl transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                                            {service.icon}
-                                        </div>
+                                        <motion.div
+                                            whileHover={{ rotateY: 180 }}
+                                            transition={{ duration: 0.8, type: "spring" }}
+                                            className="w-56 h-56 bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 flex items-center justify-center text-white shadow-[0_0_50px_rgba(0,0,0,0.3)] perspective-1000"
+                                        >
+                                            <div className="group-hover:scale-110 transition-transform duration-500">
+                                                {service.icon}
+                                            </div>
+                                        </motion.div>
                                     </div>
 
-                                    {/* Decorative Elements */}
-                                    <div className={`absolute top-10 right-10 w-20 h-20 bg-gradient-to-br ${service.gradient} rounded-full blur-xl opacity-40`} />
-                                    <div className={`absolute bottom-10 left-10 w-32 h-32 bg-white/5 rounded-full blur-2xl`} />
+                                    {/* Orbiting Elements */}
+                                    <motion.div
+                                        animate={{ rotate: 360 }}
+                                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                        className="absolute inset-0 pointer-events-none"
+                                    >
+                                        <div className={`absolute top-1/4 right-1/4 w-3 h-3 bg-white/20 rounded-full`} />
+                                        <div className={`absolute bottom-1/4 left-1/4 w-4 h-4 bg-white/10 rounded-full`} />
+                                    </motion.div>
                                 </div>
                             </div>
 
-                            {/* Text Side */}
-                            <div className="w-full lg:w-1/2 space-y-8">
-                                <div className="flex gap-3">
+                            {/* Refined Content */}
+                            <div className="w-full lg:w-1/2 space-y-10">
+                                <div className="flex flex-wrap gap-3">
                                     {service.tags.map((tag, i) => (
-                                        <span key={i} className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-gray-300">
+                                        <span key={i} className="px-5 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-xs font-bold uppercase tracking-widest text-purple-400">
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
 
-                                <h3 className="text-4xl font-bold text-white">{service.title}</h3>
-                                <p className="text-gray-400 text-lg leading-relaxed">{service.description}</p>
+                                <div className="space-y-4">
+                                    <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+                                        {service.title}
+                                    </h3>
+                                    <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full" />
+                                </div>
 
-                                <a href="#contact" className="group flex items-center gap-2 text-purple-400 font-bold hover:text-purple-300 transition-colors">
-                                    Learn More <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </a>
+                                <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
+                                    {service.description}
+                                </p>
+
+                                <motion.a
+                                    href="#contact"
+                                    whileHover={{ x: 10 }}
+                                    className="inline-flex items-center gap-4 text-white font-bold group"
+                                >
+                                    <span className="text-lg">Initiate Project</span>
+                                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-purple-600 group-hover:border-purple-600 transition-all duration-300">
+                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </div>
+                                </motion.a>
                             </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
+
+            <style jsx>{`
+                @keyframes gradient {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+                .animate-gradient {
+                    animation: gradient 3s ease infinite;
+                }
+                .perspective-1000 {
+                    perspective: 1000px;
+                }
+            `}</style>
         </section>
     );
 };
