@@ -19,7 +19,7 @@ const Contact = () => {
             first_name: formData.get('first_name'),
             last_name: formData.get('last_name'),
             email: formData.get('email'),
-            phone: phone,
+            phone: phone || formData.get('phone'),
             message: formData.get('message'),
         };
 
@@ -180,7 +180,11 @@ const Contact = () => {
                                     <PhoneInput
                                         country={'in'}
                                         value={phone}
-                                        onChange={setPhone}
+                                        onChange={(val) => setPhone(val)}
+                                        inputProps={{
+                                            name: 'phone',
+                                            required: true,
+                                        }}
                                         containerStyle={{
                                             border: 'none',
                                             width: '100%',
