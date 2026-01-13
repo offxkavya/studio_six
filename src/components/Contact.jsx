@@ -181,13 +181,17 @@ const Contact = () => {
                                         country={'in'}
                                         value={phone}
                                         onChange={setPhone}
+                                        containerStyle={{
+                                            border: 'none',
+                                            width: '100%',
+                                        }}
                                         inputStyle={{
                                             width: '100%',
                                             backgroundColor: '#f9fafb',
                                             border: '1px solid #f3f4f6',
                                             borderRadius: '1rem',
                                             padding: '1.5rem',
-                                            paddingLeft: '3.5rem',
+                                            paddingLeft: '4.5rem',
                                             color: '#111827',
                                             fontSize: '1rem',
                                             height: '74px',
@@ -198,8 +202,12 @@ const Contact = () => {
                                             backgroundColor: 'transparent',
                                             border: 'none',
                                             borderRadius: '1rem 0 0 1rem',
-                                            paddingLeft: '0.75rem',
-                                            zIndex: 10
+                                            paddingLeft: '1rem',
+                                            zIndex: 10,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            width: '60px'
                                         }}
                                         dropdownStyle={{
                                             backgroundColor: '#fff',
