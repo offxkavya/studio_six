@@ -96,17 +96,23 @@ const Contact = () => {
                         <div className="grid grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400">First Name</label>
-                                <input name="first_name" type="text" required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors" placeholder="John" />
+                                <input name="first_name" type="text" required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors placeholder:text-gray-600" placeholder="Enter your first name" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400">Last Name</label>
-                                <input name="last_name" type="text" required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors" placeholder="Doe" />
+                                <input name="last_name" type="text" required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors placeholder:text-gray-600" placeholder="Enter your last name" />
                             </div>
                         </div>
 
-                        <div className="space-y-2">
-                            <label className="text-sm text-gray-400">Email</label>
-                            <input name="email" type="email" required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors" placeholder="john@example.com" />
+                        <div className="grid grid-cols-2 gap-6">
+                            <div className="space-y-2">
+                                <label className="text-sm text-gray-400">Email</label>
+                                <input name="email" type="email" required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors placeholder:text-gray-600" placeholder="Enter your email" />
+                            </div>
+                            <div className="space-y-2">
+                                <label className="text-sm text-gray-400">Phone Number</label>
+                                <input name="phone" type="tel" className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors placeholder:text-gray-600" placeholder="Enter your phone number" />
+                            </div>
                         </div>
 
                         <div className="space-y-2">
