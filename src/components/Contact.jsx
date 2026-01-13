@@ -2,25 +2,38 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 const Contact = () => {
     const form = useRef();
     const [status, setStatus] = useState('idle'); // 'idle', 'sending', 'success', 'error'
+    const [phone, setPhone] = useState('');
 
     const sendEmail = (e) => {
         e.preventDefault();
         setStatus('sending');
 
-        emailjs.sendForm(
+        const formData = new FormData(form.current);
+        const templateParams = {
+            first_name: formData.get('first_name'),
+            last_name: formData.get('last_name'),
+            email: formData.get('email'),
+            phone: phone,
+            message: formData.get('message'),
+        };
+
+        emailjs.send(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
             import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-            form.current,
+            templateParams,
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
             .then((result) => {
                 console.log(result.text);
                 setStatus('success');
                 form.current.reset();
+                setPhone('');
                 setTimeout(() => setStatus('idle'), 5000);
             }, (error) => {
                 console.log(error.text);
@@ -111,13 +124,47 @@ const Contact = () => {
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400">Phone Number</label>
-                                <input name="phone" type="tel" className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors placeholder:text-gray-600" placeholder="Enter your phone number" />
+                                <PhoneInput
+                                    country={'in'}
+                                    value={phone}
+                                    onChange={setPhone}
+                                    inputStyle={{
+                                        width: '100%',
+                                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                                        borderRadius: '0.8rem',
+                                        padding: '1.5rem',
+                                        paddingLeft: '3.5rem',
+                                        color: '#E5E7EB',
+                                        fontSize: '1rem',
+                                        height: '56px',
+                                        transition: 'all 0.2s',
+                                    }}
+                                    buttonStyle={{
+                                        backgroundColor: 'transparent',
+                                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                                        borderRadius: '0.8rem 0 0 0.8rem',
+                                        borderRight: 'none',
+                                        paddingLeft: '0.5rem',
+                                        zIndex: 10
+                                    }}
+                                    dropdownStyle={{
+                                        backgroundColor: '#111',
+                                        color: '#E5E7EB',
+                                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                                        borderRadius: '0.8rem',
+                                        padding: '0.5rem',
+                                        boxShadow: '0 10px 25px rgba(0,0,0,0.5)',
+                                        zIndex: 50
+                                    }}
+                                    placeholder="Enter your phone number"
+                                />
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <label className="text-sm text-gray-400">Message</label>
-                            <textarea name="message" rows="4" required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors" placeholder="Tell us about your project..." />
+                            <textarea name="message" rows="4" required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:outline-none focus:border-purple-500 transition-colors placeholder:text-gray-600" placeholder="Enter your message" />
                         </div>
 
                         <button
