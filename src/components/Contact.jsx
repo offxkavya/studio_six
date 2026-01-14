@@ -92,7 +92,7 @@ const Contact = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 max-w-7xl mx-auto">
                     {/* Contact Info Panel */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
+                        initial={{ opacity: 0, x: - }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
