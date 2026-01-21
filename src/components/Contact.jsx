@@ -73,7 +73,7 @@ const Contact = () => {
                     className="text-center mb-24"
                 >
                     <motion.div
-                        initial={{ opacity: 0, y: -10 }}
+                        initial={{ opacity: 0, y: -9 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-indigo-50 border border-indigo-100 mb-8 text-indigo-600 text-sm font-semibold"
                     >
