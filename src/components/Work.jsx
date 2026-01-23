@@ -1,27 +1,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import edusyncImg from '../assets/edusync.png';
+import battleAiImg from '../assets/battle-ai.png';
 
 const projects = [
     {
-        title: 'Neon Dreams Campaign',
-        category: 'Video Editing',
-        image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop',
-        color: 'from-blue-600 to-indigo-600'
+        title: 'Knowva',
+        category: 'LMS & AI',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
+        color: 'from-indigo-600 to-blue-600',
+        link: 'https://edusync-plum.vercel.app'
+    },
+
+    {
+        title: 'Battle-AI',
+        category: 'Web App',
+        image: battleAiImg,
+        color: 'from-blue-600 to-cyan-600',
+        link: 'https://quiz-project-weld-eight.vercel.app'
     },
     {
-        title: 'Future Tech Intro',
-        category: '3D Animation',
-        image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop',
-        color: 'from-indigo-600 to-blue-600'
-    },
-    {
-        title: 'Urban Style Reel',
-        category: 'Social Media',
-        image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop',
-        color: 'from-blue-500 to-cyan-500'
+        title: 'LocalBuzz',
+        category: 'E-commerce',
+        image: 'https://images.unsplash.com/photo-1563906267088-b029e7101114?q=80&w=2070&auto=format&fit=crop',
+        color: 'from-cyan-600 to-blue-600',
+        link: 'https://localbuzz-roan.vercel.app/login'
     }
 ];
+
+
+
 
 const Work = () => {
     return (
@@ -40,20 +49,22 @@ const Work = () => {
                         </h2>
                         <p className="text-gray-500 text-xl font-medium">Showcasing our best creative projects scaling brands globally.</p>
                     </div>
-                    <button className="flex items-center gap-3 text-indigo-600 font-bold border border-indigo-100 px-8 py-4 rounded-full hover:bg-indigo-50 transition-all shadow-sm">
-                        View All Projects <ArrowUpRight className="w-5 h-5" />
-                    </button>
                 </motion.div>
+
+
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <motion.a
                             key={index}
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05, duration: 0.5 }}
-                            className="group relative aspect-[4/5] rounded-[32px] overflow-hidden cursor-pointer shadow-xl shadow-gray-200/50"
+                            className="group relative aspect-[4/5] rounded-[32px] overflow-hidden cursor-pointer shadow-xl shadow-gray-200/50 block"
                         >
                             {/* Image */}
                             <img
@@ -63,7 +74,7 @@ const Work = () => {
                             />
 
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
 
                             {/* Content */}
                             <div className="absolute bottom-0 left-0 w-full p-10 translate-y-6 group-hover:translate-y-0 transition-transform duration-400">
@@ -72,16 +83,16 @@ const Work = () => {
                                 </span>
                                 <h3 className="text-3xl font-bold mb-3 text-white">{project.title}</h3>
                                 <div className="flex items-center gap-2 text-white/90 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity delay-100">
-                                    <span>View Case Study</span>
+                                    <span>View Project</span>
                                     <ArrowUpRight className="w-5 h-5" />
                                 </div>
                             </div>
 
-                            {/* Play Button */}
+                            {/* Link/Icon Button */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-400 border border-white/30 shadow-2xl">
-                                <Play className="w-8 h-8 fill-white text-white translate-x-0.5" />
+                                <ExternalLink className="w-8 h-8 text-white" />
                             </div>
-                        </motion.div>
+                        </motion.a>
                     ))}
                 </div>
             </div>

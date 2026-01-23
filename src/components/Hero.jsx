@@ -68,7 +68,12 @@ const Hero = () => {
                     transition={{ delay: 0.2, duration: 0.5 }}
                     className="flex flex-col md:flex-row justify-center gap-6"
                 >
-                    <a href="#work" className="group relative px-12 py-5 rounded-full font-bold text-lg overflow-hidden shadow-xl shadow-indigo-100/50">
+                    <a
+                        href="https://drive.google.com/uc?export=download&id=1OTExYpzurdupzxgdWWc4pMGFZWqqT3gt"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative px-12 py-5 rounded-full font-bold text-lg overflow-hidden shadow-xl shadow-indigo-100/50"
+                    >
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 transition-transform duration-300 group-hover:scale-105" />
                         <span className="relative text-white flex items-center gap-2">
                             Explore Our Portfolio
