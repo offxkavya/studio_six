@@ -11,7 +11,7 @@ const CustomCursor = () => {
         };
 
         const handleMouseOver = (e) => {
-            // Check if hovered element or its parent is interactive
+      
             if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A' || e.target.closest('button') || e.target.closest('a')) {
                 setIsHovered(true);
             } else {
