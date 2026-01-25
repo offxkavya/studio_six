@@ -5,7 +5,7 @@ import { ArrowDown, Sparkles } from 'lucide-react';
 const Hero = () => {
     return (
         <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-[#fcfcfd]">
-            {/* Soft Ambient Background Elements */}
+       
             <motion.div
                 animate={{
                     scale: [1, 1.1, 1],
