@@ -54,7 +54,7 @@ const Navbar = () => {
                     </motion.a>
                 </div>
 
-                {/* Mobile Menu Trigger */}
+        
                 <div className="md:hidden w-8 h-8 flex flex-col justify-center space-y-1.5 cursor-pointer group">
                     <span className="w-full h-[2px] bg-gray-900 group-hover:w-1/2 transition-all" />
                     <span className="w-full h-[2px] bg-gray-900" />
