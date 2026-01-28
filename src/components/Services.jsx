@@ -85,7 +85,7 @@ const Services = () => {
                             whileHover={{ y: -8 }}
                             className="group relative bg-white border border-gray-100 p-10 rounded-[40px] shadow-sm hover:shadow-2xl hover:shadow-indigo-100/50 transition-all duration-300 overflow-hidden"
                         >
-                            {/* Decorative Background Accent */}
+                     
                             <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.gradient} opacity-[0.03] rounded-bl-[100px] transition-opacity group-hover:opacity-[0.08]`} />
 
                             <div className="relative z-10 space-y-8">
