@@ -30,10 +30,10 @@ const Clients = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-24"
                 >
-                    <h2 className="text-6xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
+                    <h2 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
                         Trusted by <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Global Brands</span>
                     </h2>
-                    <p className="text-gray-500 text-xl font-medium max-w-2xl mx-auto">From local startups to industry leaders, we're proud partners in growth.</p>
+                    <p className="text-gray-500 text-lg md:text-xl font-medium max-w-2xl mx-auto px-4 md:px-0">From local startups to industry leaders, we're proud partners in growth.</p>
                 </motion.div>
 
                 {/* Stats */}
@@ -45,12 +45,12 @@ const Clients = () => {
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05, duration: 0.5, type: 'spring', stiffness: 150 }}
-                            className="text-center p-12 bg-gray-50/50 rounded-[40px] border border-gray-100 shadow-xl shadow-gray-100/50"
+                            className="text-center p-8 md:p-12 bg-gray-50/50 rounded-[32px] md:rounded-[40px] border border-gray-100 shadow-xl shadow-gray-100/50"
                         >
-                            <div className="text-7xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tighter">
+                            <div className="text-5xl md:text-7xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4 tracking-tighter">
                                 {item.count}
                             </div>
-                            <div className="text-gray-500 font-bold text-lg uppercase tracking-widest">{item.label}</div>
+                            <div className="text-gray-400 md:text-gray-500 font-bold text-sm md:text-lg uppercase tracking-widest">{item.label}</div>
                         </motion.div>
                     ))}
                 </div>

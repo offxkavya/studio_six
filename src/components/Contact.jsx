@@ -81,10 +81,10 @@ const Contact = () => {
                         <span>Get in Touch</span>
                     </motion.div>
 
-                    <h2 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
+                    <h2 className="text-4xl md:text-8xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
                         Let's <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">Work Together</span>
                     </h2>
-                    <p className="text-gray-500 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium">
+                    <p className="text-gray-500 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium px-4 md:px-0">
                         Ready to transform your vision into reality? We're just a message away from creating something extraordinary.
                     </p>
                 </motion.div>
@@ -100,8 +100,8 @@ const Contact = () => {
                     >
                         <div className="relative group">
                             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[40px] blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
-                            <div className="relative bg-white border border-gray-100 p-12 rounded-[40px] shadow-2xl shadow-gray-200/50">
-                                <h3 className="text-4xl font-black mb-12 text-gray-900 tracking-tight">Contact <span className="text-indigo-600">Details</span></h3>
+                            <div className="relative bg-white border border-gray-100 p-8 md:p-12 rounded-[32px] md:rounded-[40px] shadow-2xl shadow-gray-200/50">
+                                <h3 className="text-3xl md:text-4xl font-black mb-10 md:mb-12 text-gray-900 tracking-tight">Contact <span className="text-indigo-600">Details</span></h3>
 
                                 <div className="space-y-12">
                                     {[
@@ -118,8 +118,8 @@ const Contact = () => {
                                                 {item.icon}
                                             </div>
                                             <div>
-                                                <div className="text-xs uppercase tracking-widest text-gray-400 font-black mb-1.5">{item.label}</div>
-                                                <div className="text-xl text-gray-900 font-bold group-hover/item:text-indigo-600 transition-colors">{item.value}</div>
+                                                <div className="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 font-black mb-1.5">{item.label}</div>
+                                                <div className="text-lg md:text-xl text-gray-900 font-bold group-hover/item:text-indigo-600 transition-colors break-words">{item.value}</div>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -139,7 +139,7 @@ const Contact = () => {
                         <form
                             ref={form}
                             onSubmit={sendEmail}
-                            className="bg-white border border-gray-100 p-10 md:p-14 rounded-[40px] shadow-2xl shadow-gray-200/50 space-y-10"
+                            className="bg-white border border-gray-100 p-6 md:p-14 rounded-[32px] md:rounded-[40px] shadow-2xl shadow-gray-200/50 space-y-8 md:space-y-10"
                         >
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 <div className="space-y-4">

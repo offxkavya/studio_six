@@ -5,7 +5,7 @@ import { ArrowDown, Sparkles } from 'lucide-react';
 const Hero = () => {
     return (
         <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-[#fcfcfd]">
-       
+
             <motion.div
                 animate={{
                     scale: [1, 1.1, 1],
@@ -48,7 +48,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                    className="text-7xl md:text-[9rem] font-black tracking-tight mb-10 text-gray-900 leading-[0.9]"
+                    className="text-5xl md:text-[9rem] font-black tracking-tight mb-8 md:mb-10 text-gray-900 leading-[1.1] md:leading-[0.9]"
                 >
                     We Are <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">Studio Six</span>
                 </motion.h1>
@@ -57,7 +57,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1, duration: 0.5 }}
-                    className="text-xl md:text-3xl text-gray-500 max-w-4xl mx-auto mb-16 leading-tight font-medium"
+                    className="text-lg md:text-3xl text-gray-500 max-w-4xl mx-auto mb-10 md:mb-16 leading-tight font-medium px-4 md:px-0"
                 >
                     Elevating brands through <span className="text-gray-900 font-bold">bold design</span> and <span className="text-gray-900 font-bold">strategic motion</span>. We build digital legacies.
                 </motion.p>
@@ -72,20 +72,20 @@ const Hero = () => {
                         href="https://drive.google.com/file/d/1BzQKWnAaAFfTtlBMLM1XuI56dEJLGnjR/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative px-12 py-5 rounded-full font-bold text-lg overflow-hidden shadow-xl shadow-indigo-100/50"
+                        className="group relative px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-base md:text-lg overflow-hidden shadow-xl shadow-indigo-100/50"
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 transition-transform duration-300 group-hover:scale-105" />
-                        <span className="relative text-white flex items-center gap-2">
+                        <span className="relative text-white flex items-center justify-center gap-2">
                             Explore Our Portfolio
                         </span>
                     </a>
-                    <a href="#services" className="px-12 py-5 rounded-full font-bold text-lg border border-gray-200 text-gray-900 hover:bg-gray-50 transition-all shadow-sm">
+                    <a href="#services" className="px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-base md:text-lg border border-gray-200 text-gray-900 hover:bg-gray-50 transition-all shadow-sm">
                         Our Services
                     </a>
                 </motion.div>
             </div>
 
-            
+
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

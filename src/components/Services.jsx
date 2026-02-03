@@ -66,10 +66,10 @@ const Services = () => {
                         <Sparkles className="w-4 h-4" />
                         <span>Our Expertise</span>
                     </div>
-                    <h2 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
+                    <h2 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
                         Premium <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">Digital Solutions</span>
                     </h2>
-                    <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+                    <p className="text-gray-500 text-base md:text-xl max-w-2xl mx-auto leading-relaxed font-medium px-4 md:px-0">
                         We build digital legacies that help brands <span className="text-gray-900 font-bold">dominate</span> their industry.
                     </p>
                 </motion.div>
@@ -83,9 +83,9 @@ const Services = () => {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05, duration: 0.4 }}
                             whileHover={{ y: -8 }}
-                            className="group relative bg-white border border-gray-100 p-10 rounded-[40px] shadow-sm hover:shadow-2xl hover:shadow-indigo-100/50 transition-all duration-300 overflow-hidden"
+                            className="group relative bg-white border border-gray-100 p-8 md:p-10 rounded-[32px] md:rounded-[40px] shadow-sm hover:shadow-2xl hover:shadow-indigo-100/50 transition-all duration-300 overflow-hidden"
                         >
-                     
+
                             <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.gradient} opacity-[0.03] rounded-bl-[100px] transition-opacity group-hover:opacity-[0.08]`} />
 
                             <div className="relative z-10 space-y-8">
