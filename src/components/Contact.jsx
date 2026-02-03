@@ -112,14 +112,14 @@ const Contact = () => {
                                         <motion.div
                                             key={idx}
                                             whileHover={{ x: 10 }}
-                                            className="flex items-center gap-8 group/item"
+                                            className="flex flex-row items-center gap-4 md:gap-8 group/item"
                                         >
-                                            <div className={`w-16 h-16 rounded-2xl ${item.color} flex items-center justify-center transition-all group-hover/item:scale-110 group-hover/item:shadow-lg shadow-sm border border-transparent group-hover/item:border-current/10`}>
+                                            <div className={`w-12 h-12 md:w-16 md:h-16 rounded-2xl ${item.color} flex items-center justify-center transition-all group-hover/item:scale-110 group-hover/item:shadow-lg shadow-sm border border-transparent group-hover/item:border-current/10 shrink-0`}>
                                                 {item.icon}
                                             </div>
-                                            <div>
+                                            <div className="min-w-0 flex-1">
                                                 <div className="text-[10px] md:text-xs uppercase tracking-widest text-gray-400 font-black mb-1.5">{item.label}</div>
-                                                <div className="text-lg md:text-xl text-gray-900 font-bold group-hover/item:text-indigo-600 transition-colors break-words">{item.value}</div>
+                                                <div className="text-base md:text-xl text-gray-900 font-bold group-hover/item:text-indigo-600 transition-colors break-all md:break-words">{item.value}</div>
                                             </div>
                                         </motion.div>
                                     ))}
