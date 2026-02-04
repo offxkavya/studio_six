@@ -14,7 +14,7 @@ const projects = [
     },
 
     {
-        title: 'Battle-AI',
+        title: 'Bittle-AI',
         category: 'Web App',
         image: battleAiImg,
         color: 'from-blue-600 to-cyan-600',
