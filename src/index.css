@@ -1,17 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #6366f1;
-  --color-secondary: #0ea5e9;
-  --color-accent: #f43f5e;
-  --color-surface-dark: #020617;
-  --color-surface-light: #f8fafc;
+  --color-primary: #818cf8;
+  --color-secondary: #38bdf8;
+  --color-accent: #fb7185;
+  --color-rose: #f43f5e;
+  /* New accent color */
+  --color-emerald: #10b981;
+  /* New accent color */
+  --color-amber: #f59e0b;
+  /* New accent color */
+  --color-surface-dark: #000000;
+  --color-surface-card: #0a0a0f;
   --font-sans: 'Inter', system-ui, sans-serif;
 }
 
 body {
-  background-color: #fcfcfd;
-  color: #0f172a;
+  background-color: #000000;
+  color: #f8fafc;
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
@@ -36,7 +42,10 @@ body {
 }
 
 .animate-gradient {
-  animation: gradient 3s ease infinite;
+  background-size: 400% 400%;
+  /* Make gradient larger for more complex movement */
+  animation: gradient 6s ease infinite;
+  /* Slower animation for smoother feel */
 }
 
 html.lenis {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -8,8 +8,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import Lenis from 'lenis';
+import Preloader from './components/Preloader';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.5,
@@ -37,15 +41,28 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#fcfcfd] text-[#0f172a] selection:bg-indigo-600 selection:text-white cursor-none">
-      <CustomCursor />
-      <Navbar />
-      <Hero />
-      <Services />
-      <Work />
-      <Clients />
-      <Contact />
-      <Footer />
+    <div className="min-h-screen bg-black text-white selection:bg-indigo-600 selection:text-white cursor-none">
+      <AnimatePresence mode="wait">
+        {isLoading ? (
+          <Preloader key="preloader" onComplete={() => setIsLoading(false)} />
+        ) : (
+          <motion.div
+            key="content"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <CustomCursor />
+            <Navbar />
+            <Hero />
+            <Services />
+            <Work />
+            <Clients />
+            <Contact />
+            <Footer />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

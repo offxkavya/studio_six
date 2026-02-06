@@ -8,21 +8,21 @@ const services = [
         description: 'Cinematic storytelling with high-impact visuals and transition mastery for global reach.',
         icon: <Video className="w-8 h-8" />,
         tags: ['PRODUCING', 'STORY'],
-        gradient: 'from-blue-500 to-indigo-600'
+        gradient: 'from-rose-500 to-indigo-600'
     },
     {
         title: 'Animated Videos',
         description: 'Dynamic 2D/3D motion graphics that bring your brand concepts to life vibrantly.',
         icon: <PlayCircle className="w-8 h-8" />,
         tags: ['MOTION', 'ANIMATION'],
-        gradient: 'from-indigo-500 to-purple-600'
+        gradient: 'from-emerald-500 to-blue-600'
     },
     {
         title: 'UI/UX Design',
         description: 'Vibrant and intuitive interfaces that translate complex ideas into seamless digital journeys.',
         icon: <Fingerprint className="w-8 h-8" />,
         tags: ['DESIGN', 'USER-CENTRIC'],
-        gradient: 'from-cyan-500 to-blue-600'
+        gradient: 'from-amber-500 to-rose-600'
     },
     {
         title: 'Website Development',
@@ -36,90 +36,116 @@ const services = [
         description: 'Strategic growth through data-driven campaigns that scale businesses efficiently.',
         icon: <Megaphone className="w-8 h-8" />,
         tags: ['STRATEGY', 'ROI'],
-        gradient: 'from-indigo-600 to-blue-500'
+        gradient: 'from-purple-600 to-indigo-500'
     },
     {
         title: 'Social Media Handling',
         description: 'Comprehensive brand management to dominate every digital platform and community.',
         icon: <Smartphone className="w-8 h-8" />,
         tags: ['CONTENT', 'TRENDING'],
-        gradient: 'from-blue-600 to-indigo-600'
+        gradient: 'from-cyan-600 to-emerald-500'
     }
 ];
 
 const Services = () => {
+    const liquidEase = [0.23, 1, 0.32, 1];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 30, scale: 0.95 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: { duration: 0.8, ease: liquidEase }
+        }
+    };
+
     return (
-        <section id="services" className="py-32 relative bg-[#f8fbff] overflow-hidden">
+        <section id="services" className="py-32 relative bg-black overflow-hidden border-t border-white/5">
             {/* Soft Ambient Background */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-100/30 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-100/30 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-rose-900/10 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.8, ease: liquidEase }}
                     viewport={{ once: true }}
-                    className="text-center mb-20"
+                    className="text-center mb-24"
                 >
-                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white border border-blue-100 mb-6 text-indigo-600 text-sm font-bold shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-6 text-rose-400 text-[10px] font-black uppercase tracking-[0.2em] shadow-sm">
                         <Sparkles className="w-4 h-4" />
-                        <span>Our Expertise</span>
+                        <span>Core Capabilities</span>
                     </div>
-                    <h2 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
-                        Premium <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">Digital Solutions</span>
+                    <h2 className="text-4xl md:text-8xl font-black mb-6 tracking-tighter text-white leading-tight">
+                        Evolving <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-rose-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">Digital Worlds</span>
                     </h2>
-                    <p className="text-gray-500 text-base md:text-xl max-w-2xl mx-auto leading-relaxed font-semibold px-4 md:px-0">
-                        We build digital legacies that help brands <span className="text-gray-900 font-bold">dominate</span> their industry.
+                    <p className="text-gray-400 text-base md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium px-4 md:px-0">
+                        We don't just provide services; we engineer <span className="text-white font-bold">digital infrastructure</span> for tomorrow's leaders.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05, duration: 0.4 }}
-                            whileHover={{ y: -8 }}
-                            className="group relative bg-white border border-gray-100 p-8 md:p-10 rounded-[32px] md:rounded-[40px] shadow-sm hover:shadow-2xl hover:shadow-indigo-100/50 transition-all duration-300 overflow-hidden"
+                            variants={cardVariants}
+                            whileHover={{ y: -12, scale: 1.02 }}
+                            className="group relative bg-white/[0.03] border border-white/5 p-10 md:p-12 rounded-[40px] md:rounded-[50px] transition-all duration-500 overflow-hidden backdrop-blur-xl hover:bg-white/[0.05] hover:border-white/20"
                         >
 
-                            <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.gradient} opacity-[0.03] rounded-bl-[100px] transition-opacity group-hover:opacity-[0.08]`} />
+                            <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${service.gradient} opacity-[0.05] rounded-bl-[120px] transition-opacity group-hover:opacity-[0.15]`} />
 
-                            <div className="relative z-10 space-y-8">
-                                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white shadow-lg shadow-indigo-100/20 transform transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110`}>
+                            <div className="relative z-10 space-y-10">
+                                <div className={`w-20 h-20 rounded-[24px] bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white shadow-2xl shadow-black/40 transform transition-transform duration-700 group-hover:rotate-[15deg] group-hover:scale-110`}>
                                     {service.icon}
                                 </div>
 
-                                <div className="space-y-4">
-                                    <div className="flex flex-wrap gap-2">
+                                <div className="space-y-6">
+                                    <div className="flex flex-wrap gap-3">
                                         {service.tags.map((tag, i) => (
-                                            <span key={i} className="text-[10px] font-black uppercase tracking-[0.2em] text-indigo-500/80">
+                                            <span key={i} className={`text-[10px] font-black uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity`}>
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-                                    <h3 className="text-3xl font-black text-gray-900 tracking-tight leading-tight">
+                                    <h3 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-none">
                                         {service.title}
                                     </h3>
-                                    <p className="text-gray-500 text-base leading-relaxed font-medium group-hover:text-gray-600 transition-colors">
+                                    <p className="text-gray-400 text-lg leading-relaxed font-medium group-hover:text-gray-200 transition-colors">
                                         {service.description}
                                     </p>
                                 </div>
 
                                 <motion.a
                                     href="#contact"
-                                    className="inline-flex items-center gap-2 text-sm font-black text-indigo-600 group/link"
+                                    className="inline-flex items-center gap-3 text-sm font-black uppercase tracking-widest text-indigo-400 group/link"
                                 >
-                                    <span>Initiate Project</span>
-                                    <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                                    <span>Start Project</span>
+                                    <ArrowRight className="w-5 h-5 transition-transform" />
                                 </motion.a>
                             </div>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );
