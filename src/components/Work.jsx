@@ -34,8 +34,14 @@ const projects = [
 
 const Work = () => {
     return (
-        <section id="work" className="py-32 bg-white relative">
-            <div className="container mx-auto px-6">
+        <section id="work" className="py-32 bg-[#020617] relative overflow-hidden">
+            {/* Background Glows */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px]" />
+            </div>
+
+            <div className="container mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -44,10 +50,10 @@ const Work = () => {
                     className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
                 >
                     <div>
-                        <h2 className="text-6xl md:text-7xl font-black mb-4 tracking-tighter text-gray-900 leading-tight">
-                            Selected <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Work</span>
+                        <h2 className="text-6xl md:text-7xl font-black mb-4 tracking-tighter text-white leading-tight">
+                            Selected <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Work</span>
                         </h2>
-                        <p className="text-gray-500 text-xl font-medium">Showcasing our best creative projects scaling brands globally.</p>
+                        <p className="text-gray-400 text-xl font-medium">Showcasing our best creative projects scaling brands globally.</p>
                     </div>
                 </motion.div>
 

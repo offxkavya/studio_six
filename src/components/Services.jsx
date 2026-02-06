@@ -49,10 +49,10 @@ const services = [
 
 const Services = () => {
     return (
-        <section id="services" className="py-32 relative bg-[#fcfcfd] overflow-hidden">
+        <section id="services" className="py-32 relative bg-[#f8fbff] overflow-hidden">
             {/* Soft Ambient Background */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-50/50 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-50/40 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-100/30 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-blue-100/30 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
@@ -62,14 +62,14 @@ const Services = () => {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 mb-6 text-indigo-600 text-sm font-bold">
+                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white border border-blue-100 mb-6 text-indigo-600 text-sm font-bold shadow-sm">
                         <Sparkles className="w-4 h-4" />
                         <span>Our Expertise</span>
                     </div>
                     <h2 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 leading-tight">
                         Premium <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">Digital Solutions</span>
                     </h2>
-                    <p className="text-gray-500 text-base md:text-xl max-w-2xl mx-auto leading-relaxed font-medium px-4 md:px-0">
+                    <p className="text-gray-500 text-base md:text-xl max-w-2xl mx-auto leading-relaxed font-semibold px-4 md:px-0">
                         We build digital legacies that help brands <span className="text-gray-900 font-bold">dominate</span> their industry.
                     </p>
                 </motion.div>

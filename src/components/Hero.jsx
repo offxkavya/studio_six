@@ -4,33 +4,46 @@ import { ArrowDown, Sparkles } from 'lucide-react';
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-[#fcfcfd]">
-
-            <motion.div
-                animate={{
-                    scale: [1, 1.1, 1],
-                    x: [0, 30, 0],
-                    y: [0, 20, 0],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                }}
-                className="absolute top-0 -left-1/4 w-[800px] h-[800px] bg-indigo-100/40 rounded-full blur-[120px]"
-            />
+        <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-white">
+            {/* Dynamic Background Elements */}
             <motion.div
                 animate={{
                     scale: [1, 1.2, 1],
-                    x: [0, -40, 0],
-                    y: [0, -30, 0],
+                    x: [0, 50, 0],
+                    y: [0, 30, 0],
+                }}
+                transition={{
+                    duration: 12,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                }}
+                className="absolute top-[-10%] -left-1/4 w-[800px] h-[800px] bg-indigo-200/40 rounded-full blur-[120px] mix-blend-multiply"
+            />
+            <motion.div
+                animate={{
+                    scale: [1, 1.3, 1],
+                    x: [0, -50, 0],
+                    y: [0, -40, 0],
+                }}
+                transition={{
+                    duration: 15,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                }}
+                className="absolute bottom-[-10%] -right-1/4 w-[900px] h-[900px] bg-blue-100/50 rounded-full blur-[140px] mix-blend-multiply"
+            />
+            <motion.div
+                animate={{
+                    scale: [1, 1.1, 1],
+                    x: [30, 0, 30],
+                    y: [20, 0, 20],
                 }}
                 transition={{
                     duration: 10,
                     repeat: Infinity,
                     repeatType: "reverse"
                 }}
-                className="absolute bottom-0 -right-1/4 w-[900px] h-[900px] bg-blue-50/50 rounded-full blur-[120px]"
+                className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-rose-100/30 rounded-full blur-[100px] mix-blend-multiply"
             />
 
             <div className="container mx-auto px-6 text-center z-10">
