@@ -59,7 +59,7 @@ const Clients = () => {
                         <span>Global Impact</span>
                     </div>
                     <h2 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter text-white leading-tight">
-                        Powering <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-rose-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">Industry Leaders</span>
+                        Powering <span className="text-white">Industry Leaders</span>
                     </h2>
                     <p className="text-gray-500 text-lg md:text-2xl font-medium max-w-2xl mx-auto px-4 md:px-0">
                         We bridge the gap between creative vision and <span className="text-white font-bold">undisputed market dominance</span>.
@@ -82,7 +82,7 @@ const Clients = () => {
                             className="group text-center p-12 md:p-16 bg-white/[0.03] rounded-[50px] border border-white/5 shadow-3xl shadow-black/50 hover:border-white/20 transition-all duration-700 backdrop-blur-xl overflow-hidden relative"
                         >
                             <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-700`} />
-                            <div className={`text-6xl md:text-8xl font-black bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mb-6 tracking-tighter group-hover:scale-110 transition-transform duration-700`}>
+                            <div className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter group-hover:scale-110 transition-transform duration-700">
                                 {item.count}
                             </div>
                             <div className="text-gray-500 font-black text-xs md:text-sm uppercase tracking-[0.3em] group-hover:text-white transition-colors">{item.label}</div>

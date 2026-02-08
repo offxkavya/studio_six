@@ -90,7 +90,7 @@ const Services = () => {
                         <span>Core Capabilities</span>
                     </div>
                     <h2 className="text-4xl md:text-8xl font-black mb-6 tracking-tighter text-white leading-tight">
-                        Evolving <span className="bg-gradient-to-r from-emerald-400 via-blue-400 to-rose-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">Digital Worlds</span>
+                        Evolving <span className="text-white">Digital Worlds</span>
                     </h2>
                     <p className="text-gray-400 text-base md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium px-4 md:px-0">
                         We don't just provide services; we engineer <span className="text-white font-bold">digital infrastructure</span> for tomorrow's leaders.

@@ -43,7 +43,7 @@ const Contact = () => {
                     </motion.div>
 
                     <h2 className="text-4xl md:text-8xl font-black mb-6 tracking-tighter text-white leading-tight">
-                        Launch Your <span className="bg-gradient-to-r from-rose-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">Legacy</span>
+                        Launch Your <span className="text-white">Legacy</span>
                     </h2>
                     <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium px-4 md:px-0">
                         Ready to transcend the ordinary? We're the architects of your digital future.

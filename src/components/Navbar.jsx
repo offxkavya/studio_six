@@ -20,7 +20,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
                     animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, ease: liquidEase }}
-                    className="text-4xl font-black bg-gradient-to-r from-rose-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent tracking-tighter bg-[length:200%_auto] animate-gradient"
+                    className="text-4xl font-black text-white tracking-tighter"
                 >
                     Studio Six
                 </motion.div>

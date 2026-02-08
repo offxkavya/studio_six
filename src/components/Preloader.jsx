@@ -44,7 +44,7 @@ const Preloader = ({ onComplete }) => {
                                 className="absolute bottom-2 left-0 h-2 bg-rose-500"
                             />
                         </span>
-                        <span className="inline-block ml-4 md:ml-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+                        <span className="inline-block ml-4 md:ml-8 text-white">
                             Six
                         </span>
                     </motion.h1>

@@ -35,7 +35,7 @@ const Hero = () => {
                     transition={{ duration: 1.2, ease: liquidEase }}
                     className="text-5xl md:text-[9.5rem] font-black tracking-tighter mb-8 md:mb-12 text-white leading-[1] md:leading-[0.85]"
                 >
-                    Mastering <span className="bg-gradient-to-r from-blue-400 via-rose-400 to-indigo-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">The Digital</span>
+                    Mastering <span className="text-white">The Digital</span>
                 </motion.h1>
 
                 <motion.p
