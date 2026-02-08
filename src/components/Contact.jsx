@@ -36,13 +36,13 @@ const Contact = () => {
                     className="text-center mb-24"
                 >
                     <motion.div
-                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 text-rose-400 text-[10px] font-black uppercase tracking-[0.2em]"
+                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 text-rose-400 text-[10px] font-bold uppercase tracking-[0.2em]"
                     >
                         <Sparkles className="w-4 h-4 animate-pulse" />
                         <span>Establish Connection</span>
                     </motion.div>
 
-                    <h2 className="text-4xl md:text-8xl font-black mb-6 tracking-tighter text-white leading-tight">
+                    <h2 className="text-4xl md:text-8xl font-bold mb-6 tracking-tighter text-white leading-tight">
                         Launch Your <span className="text-white">Legacy</span>
                     </h2>
                     <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium px-4 md:px-0">
@@ -62,7 +62,7 @@ const Contact = () => {
                         <div className="relative group">
                             <div className="absolute -inset-1 bg-gradient-to-r from-rose-600 to-indigo-600 rounded-[50px] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
                             <div className="relative bg-white/[0.03] border border-white/10 p-10 md:p-14 rounded-[40px] md:rounded-[50px] shadow-3xl shadow-black/80 backdrop-blur-2xl">
-                                <h3 className="text-4xl font-black mb-12 text-white tracking-tighter">Contact <span className="text-rose-400">Details</span></h3>
+                                <h3 className="text-4xl font-bold mb-12 text-white tracking-tighter">Contact <span className="text-rose-400">Details</span></h3>
 
                                 <div className="space-y-12">
                                     {[
@@ -79,8 +79,8 @@ const Contact = () => {
                                                 {item.icon}
                                             </div>
                                             <div className="min-w-0 flex-1">
-                                                <div className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-black mb-2">{item.label}</div>
-                                                <div className="text-lg md:text-2xl text-white font-black group-hover/item:text-rose-400 transition-colors break-all md:break-words leading-none">{item.value}</div>
+                                                <div className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-bold mb-2">{item.label}</div>
+                                                <div className="text-lg md:text-2xl text-white font-bold group-hover/item:text-rose-400 transition-colors break-all md:break-words leading-none">{item.value}</div>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -104,45 +104,45 @@ const Contact = () => {
                         >
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 <div className="space-y-4">
-                                    <label className="text-[10px] font-black text-gray-500 ml-2 uppercase tracking-[0.2em]">First Name</label>
+                                    <label className="text-[10px] font-bold text-gray-500 ml-2 uppercase tracking-[0.2em]">First Name</label>
                                     <input
                                         name="first_name"
                                         type="text"
                                         required
-                                        className="w-full bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl p-6 md:p-7 focus:outline-none focus:ring-4 focus:ring-rose-500/5 focus:border-rose-400/50 transition-all duration-500 placeholder:text-gray-700 text-white font-bold"
+                                        className="w-full bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl p-6 md:p-7 focus:outline-none focus:ring-4 focus:ring-rose-500/5 focus:border-rose-400/50 transition-all duration-500 placeholder:text-gray-700 text-white font-semibold"
                                         placeholder="First Name"
                                     />
                                 </div>
                                 <div className="space-y-4">
-                                    <label className="text-[10px] font-black text-gray-500 ml-2 uppercase tracking-[0.2em]">Last Name</label>
+                                    <label className="text-[10px] font-bold text-gray-500 ml-2 uppercase tracking-[0.2em]">Last Name</label>
                                     <input
                                         name="last_name"
                                         type="text"
                                         required
-                                        className="w-full bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl p-6 md:p-7 focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-400/50 transition-all duration-500 placeholder:text-gray-700 text-white font-bold"
+                                        className="w-full bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl p-6 md:p-7 focus:outline-none focus:ring-4 focus:ring-indigo-500/5 focus:border-indigo-400/50 transition-all duration-500 placeholder:text-gray-700 text-white font-semibold"
                                         placeholder="Last Name"
                                     />
                                 </div>
                             </div>
 
                             <div className="space-y-4">
-                                <label className="text-[10px] font-black text-gray-500 ml-2 uppercase tracking-[0.2em]">Email Address</label>
+                                <label className="text-[10px] font-bold text-gray-500 ml-2 uppercase tracking-[0.2em]">Email Address</label>
                                 <input
                                     name="email"
                                     type="email"
                                     required
-                                    className="w-full bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl p-6 md:p-7 focus:outline-none focus:ring-4 focus:ring-emerald-500/5 focus:border-emerald-400/50 transition-all duration-500 placeholder:text-gray-700 text-white font-bold"
+                                    className="w-full bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl p-6 md:p-7 focus:outline-none focus:ring-4 focus:ring-emerald-500/5 focus:border-emerald-400/50 transition-all duration-500 placeholder:text-gray-700 text-white font-semibold"
                                     placeholder="Enter your email address"
                                 />
                             </div>
 
                             <div className="space-y-4">
-                                <label className="text-[10px] font-black text-gray-500 ml-2 uppercase tracking-[0.2em]">Message</label>
+                                <label className="text-[10px] font-bold text-gray-500 ml-2 uppercase tracking-[0.2em]">Message</label>
                                 <textarea
                                     name="message"
                                     rows="5"
                                     required
-                                    className="w-full bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl p-6 md:p-7 focus:outline-none focus:ring-4 focus:ring-rose-500/5 focus:border-rose-400/50 transition-all duration-500 placeholder:text-gray-700 text-white font-bold resize-none"
+                                    className="w-full bg-white/5 border border-white/5 rounded-2xl md:rounded-3xl p-6 md:p-7 focus:outline-none focus:ring-4 focus:ring-rose-500/5 focus:border-rose-400/50 transition-all duration-500 placeholder:text-gray-700 text-white font-semibold resize-none"
                                     placeholder="How can we help you?"
                                 />
                             </div>
@@ -151,7 +151,7 @@ const Contact = () => {
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 disabled={status === 'sending'}
-                                className="w-full relative group overflow-hidden bg-gradient-to-r from-rose-600 via-indigo-600 to-emerald-600 bg-[length:200%_auto] animate-gradient transition-all duration-700 text-white font-black py-7 md:py-8 rounded-2xl md:rounded-3xl shadow-3xl shadow-rose-500/20 flex items-center justify-center gap-6 disabled:opacity-50"
+                                className="w-full relative group overflow-hidden bg-gradient-to-r from-rose-600 via-indigo-600 to-emerald-600 bg-[length:200%_auto] animate-gradient transition-all duration-700 text-white font-bold py-7 md:py-8 rounded-2xl md:rounded-3xl shadow-3xl shadow-rose-500/20 flex items-center justify-center gap-6 disabled:opacity-50"
                             >
                                 <AnimatePresence mode="wait">
                                     {status === 'sending' ? (

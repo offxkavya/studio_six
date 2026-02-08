@@ -33,7 +33,7 @@ const Preloader = ({ onComplete }) => {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -100, opacity: 0 }}
                         transition={{ duration: 1.2, ease: liquidEase }}
-                        className="text-6xl md:text-9xl font-black text-white tracking-tighter"
+                        className="text-6xl md:text-9xl font-bold text-white tracking-tighter"
                     >
                         <span className="inline-block relative">
                             Studio

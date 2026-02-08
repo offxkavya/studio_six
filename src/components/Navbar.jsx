@@ -20,7 +20,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
                     animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
                     transition={{ duration: 0.8, ease: liquidEase }}
-                    className="text-4xl font-black text-white tracking-tighter"
+                    className="text-4xl font-bold text-white tracking-tighter"
                 >
                     Studio Six
                 </motion.div>
@@ -33,7 +33,7 @@ const Navbar = () => {
                             initial={{ opacity: 0, y: -20, filter: "blur(5px)" }}
                             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             transition={{ delay: index * 0.1, duration: 0.8, ease: liquidEase }}
-                            className="relative text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-colors group"
+                            className="relative text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-colors group"
                         >
                             {item}
                             <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-rose-500 to-indigo-500 transition-all duration-500 group-hover:w-full" />
@@ -49,7 +49,7 @@ const Navbar = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-rose-600 via-indigo-600 to-blue-600 bg-[length:200%_auto] animate-gradient" />
                         <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-                        <span className="relative text-white font-black text-[10px] uppercase tracking-[0.3em]">
+                        <span className="relative text-white font-bold text-[10px] uppercase tracking-[0.3em]">
                             Initiate Protocol
                         </span>
                     </motion.a>

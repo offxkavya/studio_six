@@ -52,7 +52,7 @@ const Work = () => {
                     className="flex flex-col md:flex-row justify-between items-end mb-24 gap-6"
                 >
                     <div>
-                        <h2 className="text-6xl md:text-9xl font-black mb-6 tracking-tighter text-white leading-[0.9]">
+                        <h2 className="text-6xl md:text-9xl font-bold mb-6 tracking-tighter text-white leading-[0.9]">
                             Selected <span className="text-white">Work</span>
                         </h2>
                         <p className="text-gray-400 text-xl md:text-2xl font-medium max-w-2xl">Defining global digital standards through architectural excellence.</p>
@@ -86,11 +86,11 @@ const Work = () => {
 
                             {/* Content */}
                             <div className="absolute bottom-0 left-0 w-full p-12 translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-[0.23,1,0.32,1]">
-                                <span className={`inline-block px-5 py-2 rounded-full text-[10px] font-black bg-gradient-to-r ${project.color} text-white mb-6 tracking-[0.2em] uppercase shadow-2xl`}>
+                                <span className={`inline-block px-5 py-2 rounded-full text-[10px] font-bold bg-gradient-to-r ${project.color} text-white mb-6 tracking-[0.2em] uppercase shadow-2xl`}>
                                     {project.category}
                                 </span>
-                                <h3 className="text-4xl md:text-5xl font-black mb-4 text-white tracking-tighter">{project.title}</h3>
-                                <div className="flex items-center gap-3 text-white/70 text-sm font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                                <h3 className="text-4xl md:text-5xl font-bold mb-4 text-white tracking-tighter">{project.title}</h3>
+                                <div className="flex items-center gap-3 text-white/70 text-sm font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100">
                                     <span>View Project</span>
                                     <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                 </div>

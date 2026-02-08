@@ -85,15 +85,15 @@ const Services = () => {
                     viewport={{ once: true }}
                     className="text-center mb-24"
                 >
-                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-6 text-rose-400 text-[10px] font-black uppercase tracking-[0.2em] shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-6 text-rose-400 text-[10px] font-bold uppercase tracking-[0.2em] shadow-sm">
                         <Sparkles className="w-4 h-4" />
                         <span>Core Capabilities</span>
                     </div>
-                    <h2 className="text-4xl md:text-8xl font-black mb-6 tracking-tighter text-white leading-tight">
+                    <h2 className="text-4xl md:text-8xl font-bold mb-6 tracking-tighter text-white leading-tight">
                         Evolving <span className="text-white">Digital Worlds</span>
                     </h2>
                     <p className="text-gray-400 text-base md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium px-4 md:px-0">
-                        We don't just provide services; we engineer <span className="text-white font-bold">digital infrastructure</span> for tomorrow's leaders.
+                        We don't just provide services; we engineer <span className="text-white font-semibold">digital infrastructure</span> for tomorrow's leaders.
                     </p>
                 </motion.div>
 
@@ -122,12 +122,12 @@ const Services = () => {
                                 <div className="space-y-6">
                                     <div className="flex flex-wrap gap-3">
                                         {service.tags.map((tag, i) => (
-                                            <span key={i} className={`text-[10px] font-black uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity`}>
+                                            <span key={i} className={`text-[10px] font-bold uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100 transition-opacity`}>
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
-                                    <h3 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-none">
+                                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-none">
                                         {service.title}
                                     </h3>
                                     <p className="text-gray-400 text-lg leading-relaxed font-medium group-hover:text-gray-200 transition-colors">
@@ -137,7 +137,7 @@ const Services = () => {
 
                                 <motion.a
                                     href="#contact"
-                                    className="inline-flex items-center gap-3 text-sm font-black uppercase tracking-widest text-indigo-400 group/link"
+                                    className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-indigo-400 group/link"
                                 >
                                     <span>Start Project</span>
                                     <ArrowRight className="w-5 h-5 transition-transform" />

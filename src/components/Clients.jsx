@@ -54,15 +54,15 @@ const Clients = () => {
                     transition={{ duration: 1, ease: liquidEase }}
                     className="text-center mb-28"
                 >
-                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 text-rose-400 text-[10px] font-black uppercase tracking-[0.3em]">
+                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-8 text-rose-400 text-[10px] font-bold uppercase tracking-[0.3em]">
                         <Sparkles className="w-4 h-4 animate-pulse" />
                         <span>Global Impact</span>
                     </div>
-                    <h2 className="text-4xl md:text-8xl font-black mb-8 tracking-tighter text-white leading-tight">
+                    <h2 className="text-4xl md:text-8xl font-bold mb-8 tracking-tighter text-white leading-tight">
                         Powering <span className="text-white">Industry Leaders</span>
                     </h2>
                     <p className="text-gray-500 text-lg md:text-2xl font-medium max-w-2xl mx-auto px-4 md:px-0">
-                        We bridge the gap between creative vision and <span className="text-white font-bold">undisputed market dominance</span>.
+                        We bridge the gap between creative vision and <span className="text-white font-semibold">undisputed market dominance</span>.
                     </p>
                 </motion.div>
 
@@ -82,10 +82,10 @@ const Clients = () => {
                             className="group text-center p-12 md:p-16 bg-white/[0.03] rounded-[50px] border border-white/5 shadow-3xl shadow-black/50 hover:border-white/20 transition-all duration-700 backdrop-blur-xl overflow-hidden relative"
                         >
                             <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-700`} />
-                            <div className="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter group-hover:scale-110 transition-transform duration-700">
+                            <div className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tighter group-hover:scale-110 transition-transform duration-700">
                                 {item.count}
                             </div>
-                            <div className="text-gray-500 font-black text-xs md:text-sm uppercase tracking-[0.3em] group-hover:text-white transition-colors">{item.label}</div>
+                            <div className="text-gray-500 font-bold text-xs md:text-sm uppercase tracking-[0.3em] group-hover:text-white transition-colors">{item.label}</div>
                         </motion.div>
                     ))}
                 </motion.div>
@@ -103,7 +103,7 @@ const Clients = () => {
                             key={index}
                             variants={itemVariants}
                             whileHover={{ scale: 1.1, backgroundColor: 'rgba(255, 255, 255, 0.08)' }}
-                            className="px-10 py-5 bg-white/[0.04] rounded-[24px] border border-white/5 text-gray-400 font-black uppercase tracking-widest text-[10px] md:text-xs hover:text-white hover:border-rose-500/50 transition-all cursor-default shadow-3xl shadow-black/40 backdrop-blur-2xl"
+                            className="px-10 py-5 bg-white/[0.04] rounded-[24px] border border-white/5 text-gray-400 font-bold uppercase tracking-widest text-[10px] md:text-xs hover:text-white hover:border-rose-500/50 transition-all cursor-default shadow-3xl shadow-black/40 backdrop-blur-2xl"
                         >
                             {type}
                         </motion.span>
