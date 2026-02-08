@@ -33,7 +33,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 50, filter: "blur(10px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                     transition={{ duration: 1.2, ease: liquidEase }}
-                    className="text-5xl md:text-[9.5rem] font-bold tracking-tighter mb-8 md:mb-12 text-white leading-[1] md:leading-[0.85]"
+                    className="text-4xl md:text-7xl font-bold tracking-tighter mb-8 md:mb-12 text-white leading-[1] md:leading-[1.1]"
                 >
                     Mastering <span className="text-white">The Digital</span>
                 </motion.h1>

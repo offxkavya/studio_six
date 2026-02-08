@@ -58,7 +58,7 @@ const Clients = () => {
                         <Sparkles className="w-4 h-4 animate-pulse" />
                         <span>Global Impact</span>
                     </div>
-                    <h2 className="text-4xl md:text-8xl font-bold mb-8 tracking-tighter text-white leading-tight">
+                    <h2 className="text-3xl md:text-6xl font-bold mb-8 tracking-tighter text-white leading-tight">
                         Powering <span className="text-white">Industry Leaders</span>
                     </h2>
                     <p className="text-gray-500 text-lg md:text-2xl font-medium max-w-2xl mx-auto px-4 md:px-0">

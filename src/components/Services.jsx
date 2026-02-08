@@ -89,7 +89,7 @@ const Services = () => {
                         <Sparkles className="w-4 h-4" />
                         <span>Core Capabilities</span>
                     </div>
-                    <h2 className="text-4xl md:text-8xl font-bold mb-6 tracking-tighter text-white leading-tight">
+                    <h2 className="text-3xl md:text-6xl font-bold mb-6 tracking-tighter text-white leading-tight">
                         Evolving <span className="text-white">Digital Worlds</span>
                     </h2>
                     <p className="text-gray-400 text-base md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium px-4 md:px-0">
