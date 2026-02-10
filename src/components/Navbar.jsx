@@ -1,68 +1,69 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const liquidEase = [0.23, 1, 0.32, 1];
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isDarkSection, setIsDarkSection] = useState(true);
+    const { scrollY } = useScroll();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        setIsScrolled(latest > 50);
+        // Hero is roughly 100vh. After 100vh, we assume light section (based on "Hybrid" plan)
+        // Adjust this logic if sections change heights dynamically
+        setIsDarkSection(latest < window.innerHeight - 100);
+    });
+
+    const textColor = isDarkSection ? "text-white" : "text-black";
+    const borderColor = isDarkSection ? "border-white/10" : "border-black/5";
+    const glassBg = isDarkSection ? "bg-white/5" : "bg-white/80";
 
     return (
-        <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${scrolled ? 'py-4 bg-black/40 backdrop-blur-2xl border-b border-white/5 shadow-2xl shadow-black/50' : 'py-10 bg-transparent'}`}>
-            <div className="container mx-auto px-6 flex justify-between items-center">
-                <motion.div
-                    initial={{ opacity: 0, x: -30, filter: "blur(10px)" }}
-                    animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                    transition={{ duration: 0.8, ease: liquidEase }}
-                    className="text-4xl font-bold text-white tracking-tighter"
-                >
-                    Studio Six
-                </motion.div>
+        <motion.nav
+            className={`fixed top-0 left-0 right-0 z-50 flex justify-center py-6 transition-all duration-500`}
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+            <motion.div
+                layout
+                className={`
+                    ${isScrolled ? 'px-6 py-3 rounded-full backdrop-blur-xl shadow-lg' : 'px-10 py-5 bg-transparent'}
+                    ${isScrolled ? glassBg : ''}
+                    ${isScrolled ? 'border ' + borderColor : ''}
+                    flex items-center gap-12 transition-all duration-500
+                `}
+            >
+                {/* Brand */}
+                <a href="#" className={`font-display font-bold text-xl tracking-tighter ${textColor} transition-colors duration-500`}>
+                    STUDIO SIX
+                </a>
 
-                <div className="hidden md:flex items-center space-x-12">
-                    {['Services', 'Work', 'Clients', 'Contact'].map((item, index) => (
-                        <motion.a
+                {/* Links (Desktop) */}
+                <div className="hidden md:flex items-center gap-8">
+                    {['Services', 'Work', 'Clients', 'Contact'].map((item) => (
+                        <a
                             key={item}
                             href={`#${item.toLowerCase()}`}
-                            initial={{ opacity: 0, y: -20, filter: "blur(5px)" }}
-                            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                            transition={{ delay: index * 0.1, duration: 0.8, ease: liquidEase }}
-                            className="relative text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-colors group"
+                            className={`text-xs font-bold uppercase tracking-widest ${isDarkSection ? 'text-white/70 hover:text-white' : 'text-black/60 hover:text-black'} transition-colors duration-300`}
                         >
                             {item}
-                            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-rose-500 to-indigo-500 transition-all duration-500 group-hover:w-full" />
-                        </motion.a>
+                        </a>
                     ))}
-
-                    <motion.a
-                        href="#contact"
-                        initial={{ opacity: 0, x: 30, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        transition={{ duration: 0.8, ease: liquidEase }}
-                        className="relative group px-10 py-4 rounded-full overflow-hidden shadow-2xl shadow-rose-500/10"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-r from-rose-600 via-indigo-600 to-blue-600 bg-[length:200%_auto] animate-gradient" />
-                        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-                        <span className="relative text-white font-bold text-[10px] uppercase tracking-[0.3em]">
-                            Initiate Protocol
-                        </span>
-                    </motion.a>
                 </div>
 
-
-                <div className="md:hidden w-8 h-8 flex flex-col justify-center space-y-2 cursor-pointer group">
-                    <span className="w-full h-[2px] bg-white group-hover:bg-rose-400 transition-all origin-right" />
-                    <span className="w-full h-[2px] bg-white group-hover:bg-indigo-400" />
-                    <span className="w-full h-[2px] bg-white group-hover:bg-blue-400 group-hover:w-1/2 transition-all" />
-                </div>
-            </div>
-        </nav>
+                {/* CTA */}
+                <a
+                    href="#contact"
+                    className={`
+                        hidden md:flex items-center justify-center px-5 py-2 rounded-full 
+                        ${isDarkSection ? 'bg-white text-black' : 'bg-black text-white'}
+                        text-xs font-bold uppercase tracking-widest hover:scale-105 transition-all duration-300
+                    `}
+                >
+                    Start
+                </a>
+            </motion.div>
+        </motion.nav>
     );
 };
 
