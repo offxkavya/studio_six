@@ -9,7 +9,6 @@ const projects = [
         title: 'Knowva',
         category: 'Intelligent Education',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
-        color: 'from-rose-600 to-indigo-600',
         link: 'https://edusync-plum.vercel.app'
     },
 
@@ -17,14 +16,12 @@ const projects = [
         title: 'Bittle-AI',
         category: 'Cognitive Interface',
         image: battleAiImg,
-        color: 'from-emerald-600 to-blue-600',
         link: 'https://quiz-project-weld-eight.vercel.app'
     },
     {
         title: 'LocalBuzz',
         category: 'Digital Marketplace',
         image: 'https://images.unsplash.com/photo-1563906267088-b029e7101114?q=80&w=2070&auto=format&fit=crop',
-        color: 'from-amber-600 to-rose-600',
         link: 'https://localbuzz-roan.vercel.app/login'
     }
 ];
@@ -38,10 +35,8 @@ const Work = () => {
     return (
         <section id="work" className="py-32 bg-black relative overflow-hidden border-t border-white/5">
             {/* Background Glows */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[140px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-rose-900/10 rounded-full blur-[140px]" />
-            </div>
+            {/* Clean Background */}
+            <div className="absolute inset-0 bg-black" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
@@ -82,11 +77,11 @@ const Work = () => {
                             />
 
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
 
                             {/* Content */}
                             <div className="absolute bottom-0 left-0 w-full p-12 translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-[0.23,1,0.32,1]">
-                                <span className={`inline-block px-5 py-2 rounded-full text-[10px] font-bold bg-gradient-to-r ${project.color} text-white mb-6 tracking-[0.2em] uppercase shadow-2xl`}>
+                                <span className={`inline-block px-5 py-2 rounded-full text-[10px] font-bold bg-white text-black mb-6 tracking-[0.2em] uppercase shadow-sm`}>
                                     {project.category}
                                 </span>
                                 <h3 className="text-4xl md:text-5xl font-bold mb-4 text-white tracking-tighter">{project.title}</h3>
