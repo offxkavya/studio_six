@@ -7,23 +7,15 @@ const Hero = () => {
 
     return (
         <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-black">
-            {/* Liquid Background Orbs */}
-            <div
-                className="absolute top-[-20%] -left-1/4 w-[1000px] h-[1000px] bg-indigo-900/30 rounded-full blur-[160px]"
-            />
-            <div
-                className="absolute bottom-[-20%] -right-1/4 w-[1100px] h-[1100px] bg-blue-900/20 rounded-full blur-[180px]"
-            />
-            <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-rose-900/10 rounded-full blur-[120px]"
-            />
+            {/* Clean Background - Removed Orbs */}
+            <div className="absolute inset-0 bg-black" />
 
             <div className="container mx-auto px-6 text-center z-10">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: liquidEase }}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-10 text-indigo-400 text-sm font-semibold shadow-2xl shadow-indigo-500/5 backdrop-blur-xl"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-10 text-white text-sm font-semibold shadow-sm backdrop-blur-xl"
                 >
                     <Sparkles className="w-4 h-4 animate-pulse" />
                     <span className="tracking-widest uppercase text-[10px]">Creative Intelligence Agency</span>
@@ -57,10 +49,9 @@ const Hero = () => {
                         href="https://drive.google.com/file/d/1BzQKWnAaAFfTtlBMLM1XuI56dEJLGnjR/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative px-10 md:px-16 py-5 md:py-6 rounded-full font-bold text-base md:text-xl overflow-hidden shadow-2xl shadow-indigo-500/30 transition-all hover:scale-105"
+                        className="group relative px-10 md:px-16 py-5 md:py-6 rounded-full font-bold text-base md:text-xl overflow-hidden bg-white text-black transition-all hover:scale-105"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-rose-600 bg-[length:200%_auto] animate-gradient" />
-                        <span className="relative text-white flex items-center justify-center gap-3">
+                        <span className="relative flex items-center justify-center gap-3">
                             Explore Portfolio
                             <ArrowRight className="w-5 h-5 transition-transform" />
                         </span>
@@ -78,12 +69,12 @@ const Hero = () => {
                 transition={{ delay: 1.5, duration: 1 }}
                 className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
             >
-                <div className="w-[1px] h-20 bg-gradient-to-b from-rose-500 via-indigo-500 to-transparent" />
+                <div className="w-[1px] h-20 bg-white/20" />
                 <motion.div
                     animate={{ y: [0, 15, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
-                    <ArrowDown className="w-6 h-6 text-indigo-400" />
+                    <ArrowDown className="w-6 h-6 text-white/50" />
                 </motion.div>
             </motion.div>
         </section>

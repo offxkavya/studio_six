@@ -7,43 +7,37 @@ const services = [
         title: 'Video Editing',
         description: 'Cinematic storytelling with high-impact visuals and transition mastery for global reach.',
         icon: <Video className="w-8 h-8" />,
-        tags: ['PRODUCING', 'STORY'],
-        gradient: 'from-rose-500 to-indigo-600'
+        tags: ['PRODUCING', 'STORY']
     },
     {
         title: 'Animated Videos',
         description: 'Dynamic 2D/3D motion graphics that bring your brand concepts to life vibrantly.',
         icon: <PlayCircle className="w-8 h-8" />,
-        tags: ['MOTION', 'ANIMATION'],
-        gradient: 'from-emerald-500 to-blue-600'
+        tags: ['MOTION', 'ANIMATION']
     },
     {
         title: 'UI/UX Design',
         description: 'Vibrant and intuitive interfaces that translate complex ideas into seamless digital journeys.',
         icon: <Fingerprint className="w-8 h-8" />,
-        tags: ['DESIGN', 'USER-CENTRIC'],
-        gradient: 'from-amber-500 to-rose-600'
+        tags: ['DESIGN', 'USER-CENTRIC']
     },
     {
         title: 'Website Development',
         description: 'Next-gen digital experiences built with performance and aesthetics at the core.',
         icon: <Code className="w-8 h-8" />,
-        tags: ['FULL-STACK', 'SCALABLE'],
-        gradient: 'from-blue-600 to-cyan-500'
+        tags: ['FULL-STACK', 'SCALABLE']
     },
     {
         title: 'Meta & Google Ads',
         description: 'Strategic growth through data-driven campaigns that scale businesses efficiently.',
         icon: <Megaphone className="w-8 h-8" />,
-        tags: ['STRATEGY', 'ROI'],
-        gradient: 'from-purple-600 to-indigo-500'
+        tags: ['STRATEGY', 'ROI']
     },
     {
         title: 'Social Media Handling',
         description: 'Comprehensive brand management to dominate every digital platform and community.',
         icon: <Smartphone className="w-8 h-8" />,
-        tags: ['CONTENT', 'TRENDING'],
-        gradient: 'from-cyan-600 to-emerald-500'
+        tags: ['CONTENT', 'TRENDING']
     }
 ];
 
@@ -73,9 +67,8 @@ const Services = () => {
 
     return (
         <section id="services" className="py-32 relative bg-black overflow-hidden border-t border-white/5">
-            {/* Soft Ambient Background */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-rose-900/10 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2" />
+            {/* Clean Background */}
+            <div className="absolute inset-0 bg-black" />
 
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
@@ -85,7 +78,7 @@ const Services = () => {
                     viewport={{ once: true }}
                     className="text-center mb-24"
                 >
-                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-6 text-rose-400 text-[10px] font-bold uppercase tracking-[0.2em] shadow-sm">
+                    <div className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-white/10 mb-6 text-white text-[10px] font-bold uppercase tracking-[0.2em]">
                         <Sparkles className="w-4 h-4" />
                         <span>Core Capabilities</span>
                     </div>
@@ -112,10 +105,10 @@ const Services = () => {
                             className="group relative bg-white/[0.03] border border-white/5 p-10 md:p-12 rounded-[40px] md:rounded-[50px] transition-all duration-500 overflow-hidden backdrop-blur-xl hover:bg-white/[0.05] hover:border-white/20"
                         >
 
-                            <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${service.gradient} opacity-[0.05] rounded-bl-[120px] transition-opacity group-hover:opacity-[0.15]`} />
+
 
                             <div className="relative z-10 space-y-10">
-                                <div className={`w-20 h-20 rounded-[24px] bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white shadow-2xl shadow-black/40 transform transition-transform duration-700 group-hover:rotate-[15deg] group-hover:scale-110`}>
+                                <div className="w-20 h-20 rounded-[24px] bg-white/5 border border-white/10 flex items-center justify-center text-white transition-transform duration-700 group-hover:bg-white group-hover:text-black group-hover:scale-105">
                                     {service.icon}
                                 </div>
 
@@ -137,7 +130,7 @@ const Services = () => {
 
                                 <motion.a
                                     href="#contact"
-                                    className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-indigo-400 group/link"
+                                    className="inline-flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-white/60 hover:text-white transition-colors group/link"
                                 >
                                     <span>Start Project</span>
                                     <ArrowRight className="w-5 h-5 transition-transform" />
