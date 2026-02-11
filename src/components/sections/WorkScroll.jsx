@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink } from 'lucide-react';
-import edusyncImg from '../../assets/edusync.png';
 import battleAiImg from '../../assets/battle-ai.png';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,7 +10,7 @@ const projects = [
     {
         title: 'Knowva',
         category: 'Intelligent Education',
-        image: edusyncImg,
+        image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop',
         link: 'https://edusync-plum.vercel.app',
         year: '2024',
         color: '#D4FF00',
