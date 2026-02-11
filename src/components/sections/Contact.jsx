@@ -2,19 +2,27 @@ import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Twitter } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
     const sectionRef = useRef(null);
     const formRef = useRef(null);
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState('');
 
     useEffect(() => {
-        const inputs = formRef.current.querySelectorAll('input, textarea');
+        const inputs = formRef.current?.querySelectorAll('input, textarea');
 
-        inputs.forEach((input, index) => {
+        inputs?.forEach((input, index) => {
             gsap.fromTo(
                 input,
                 { y: 50, opacity: 0 },
@@ -32,23 +40,61 @@ const Contact = () => {
         });
     }, []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setError('');
 
-        // Animate success
-        gsap.to(formRef.current, {
-            scale: 0.95,
-            opacity: 0,
-            duration: 0.5,
-            onComplete: () => {
-                setIsSubmitted(true);
-                gsap.fromTo(
-                    '.success-message',
-                    { scale: 0, opacity: 0 },
-                    { scale: 1, opacity: 1, duration: 0.8, ease: 'back.out(1.7)' }
-                );
-            },
-        });
+        try {
+            // EmailJS configuration
+            const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+            const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+            const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+            // Check if EmailJS is configured
+            if (!serviceId || !templateId || !publicKey) {
+                throw new Error('EmailJS is not configured. Please add your credentials to .env file.');
+            }
+
+            // Send email using EmailJS
+            const result = await emailjs.send(
+                serviceId,
+                templateId,
+                {
+                    user_name: formData.name,
+                    user_email: formData.email,
+                    user_phone: formData.phone,
+                    user_message: formData.message,
+                },
+                publicKey
+            );
+
+            console.log('Email sent successfully:', result);
+
+            // Animate success
+            gsap.to(formRef.current, {
+                scale: 0.95,
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                    setIsSubmitted(true);
+                    setIsSubmitting(false);
+                    gsap.fromTo(
+                        '.success-message',
+                        { scale: 0, opacity: 0 },
+                        { scale: 1, opacity: 1, duration: 0.8, ease: 'back.out(1.7)' }
+                    );
+                },
+            });
+
+            // Reset form
+            setFormData({ name: '', email: '', phone: '', message: '' });
+
+        } catch (err) {
+            console.error('EmailJS Error:', err);
+            setError(err.text || err.message || 'Failed to send message. Please try again.');
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -99,6 +145,7 @@ const Contact = () => {
                                 <div>
                                     <input
                                         type="text"
+                                        name="name"
                                         placeholder="Your Name"
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -109,6 +156,7 @@ const Contact = () => {
                                 <div>
                                     <input
                                         type="email"
+                                        name="email"
                                         placeholder="Your Email"
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -117,7 +165,19 @@ const Contact = () => {
                                     />
                                 </div>
                                 <div>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Your Phone Number"
+                                        value={formData.phone}
+                                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                        required
+                                        className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-all"
+                                    />
+                                </div>
+                                <div>
                                     <textarea
+                                        name="message"
                                         placeholder="Your Message"
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -126,11 +186,19 @@ const Contact = () => {
                                         className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-all resize-none"
                                     />
                                 </div>
+
+                                {error && (
+                                    <div className="text-red-500 text-sm bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">
+                                        {error}
+                                    </div>
+                                )}
+
                                 <button
                                     type="submit"
-                                    className="magnetic w-full px-8 py-5 bg-primary text-black rounded-full font-bold text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2"
+                                    disabled={isSubmitting}
+                                    className="magnetic w-full px-8 py-5 bg-primary text-black rounded-full font-bold text-lg hover:scale-105 transition-transform flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    Send Message <Send size={20} />
+                                    {isSubmitting ? 'Sending...' : 'Send Message'} <Send size={20} />
                                 </button>
                             </form>
                         ) : (

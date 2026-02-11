@@ -1,46 +1,46 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Palette, Globe, Megaphone, Smartphone, Video, Sparkles } from 'lucide-react';
+import { Code, Palette, Megaphone, Share2, Video, PlayCircle } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
     {
-        icon: <Video size={40} />,
-        title: 'Video Editing',
-        description: 'Cinematic storytelling through professional video editing that captures attention and drives engagement.',
-        gradient: 'from-purple-500 to-pink-500',
+        icon: <Code size={40} />,
+        title: 'Website Development',
+        description: 'High-performance websites built with cutting-edge technologies for optimal user experience.',
+        gradient: 'from-blue-500 to-cyan-500',
     },
     {
-        icon: <Globe size={40} />,
+        icon: <Palette size={40} />,
         title: 'Website Design',
-        description: 'Stunning, high-performance websites that convert visitors into customers with seamless UX.',
-        gradient: 'from-blue-500 to-cyan-500',
+        description: 'Beautiful, user-centric designs that captivate audiences and drive engagement.',
+        gradient: 'from-purple-500 to-pink-500',
     },
     {
         icon: <Megaphone size={40} />,
         title: 'Meta & Google Ads',
-        description: 'Data-driven advertising campaigns that maximize ROI and scale your business exponentially.',
+        description: 'Strategic ad campaigns on Meta and Google platforms that drive conversions and ROI.',
         gradient: 'from-orange-500 to-red-500',
     },
     {
-        icon: <Smartphone size={40} />,
+        icon: <Share2 size={40} />,
         title: 'Social Media',
-        description: 'Strategic social media management that builds communities and amplifies your brand voice.',
+        description: 'Comprehensive social media management including content strategy, creation, and community engagement.',
         gradient: 'from-green-500 to-emerald-500',
     },
     {
-        icon: <Palette size={40} />,
-        title: 'Brand Identity',
-        description: 'Memorable brand identities that resonate with your audience and stand out in the market.',
-        gradient: 'from-yellow-500 to-orange-500',
+        icon: <PlayCircle size={40} />,
+        title: 'Animated Videos',
+        description: 'Captivating animated videos and motion design to bring your brand story to life.',
+        gradient: 'from-indigo-500 to-purple-500',
     },
     {
-        icon: <Sparkles size={40} />,
-        title: 'Creative Strategy',
-        description: 'Innovative creative strategies that transform ideas into impactful digital experiences.',
-        gradient: 'from-indigo-500 to-purple-500',
+        icon: <Video size={40} />,
+        title: 'Video Editing',
+        description: 'Cinematic storytelling through professional video editing that captures attention and drives engagement.',
+        gradient: 'from-yellow-500 to-orange-500',
     },
 ];
 
