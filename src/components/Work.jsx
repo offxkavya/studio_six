@@ -8,7 +8,7 @@ const projects = [
     {
         title: 'Knowva',
         category: 'Intelligent Education',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
+        image: edusyncImg,
         link: 'https://edusync-plum.vercel.app',
         year: '2024'
     },

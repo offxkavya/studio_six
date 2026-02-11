@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink } from 'lucide-react';
-import edusyncImg from '../assets/edusync.png';
-import battleAiImg from '../assets/battle-ai.png';
+import edusyncImg from '../../assets/edusync.png';
+import battleAiImg from '../../assets/battle-ai.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
