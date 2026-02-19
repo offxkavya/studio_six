@@ -39,7 +39,7 @@ const Contact = () => {
                                     <Mail className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <div className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">Email</div>
+                                    <div className="text-[11px] uppercase tracking-widest text-gray-500 mb-1">Email</div>
                                     <div className="text-lg font-bold">hellow.studiosixx@gmail.com</div>
                                 </div>
                             </div>
