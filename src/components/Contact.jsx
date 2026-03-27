@@ -18,7 +18,7 @@ const Contact = () => {
         <section id="contact" className="py-32 bg-surface-black text-white relative rounded-t-[50px] -mt-10 z-30">
             <div className="container mx-auto px-6">
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-21">
 
                     {/* Left: Info */}
                     <div>
