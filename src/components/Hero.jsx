@@ -69,7 +69,7 @@ const Hero = () => {
                     </a>
                     <a
                         href="#services"
-                        className="px-8 py-3 border border-white/20 text-white rounded-full hover:bg-white/10 transition-colors font-bold uppercase tracking-widest text-xs"
+                        className="px-8 py-4 border border-white/20 text-white rounded-full hover:bg-white/10 transition-colors font-bold uppercase tracking-widest text-xs"
                     >
                         Our Expertise
                     </a>
